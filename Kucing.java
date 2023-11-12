@@ -12,4 +12,7 @@ public class Kucing extends Hewan{
     public Kucing() {
         jenisSuara = "Meong";
     }
+    public boolean isMamalia() {
+        return false;
+    }
 }
