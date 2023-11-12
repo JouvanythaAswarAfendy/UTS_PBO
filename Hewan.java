@@ -14,4 +14,7 @@ public class Hewan {
     public void bersuara() {
         System.out.println(jenisSuara);
     }
+    public boolean isMamalia() {
+        return false;
+    }
 }
