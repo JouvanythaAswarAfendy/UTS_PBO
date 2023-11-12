@@ -15,25 +15,27 @@ public class HewanDemo {
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String jenisHewan;
-
         System.out.print("Masukkan jenis hewan (Kucing/Anjing): ");
-        jenisHewan = input.nextLine();
+        String jenisHewan = input.nextLine();
 
         Hewan hewan;
-        if (jenisHewan.equalsIgnoreCase("Kucing")) {
+
+        if ("Kucing".equalsIgnoreCase(jenisHewan)) {
             hewan = new Kucing();
-        } else {
+        } else if ("Anjing".equalsIgnoreCase(jenisHewan)) {
             hewan = new Anjing();
+        } else {
+            System.out.println("Jenis hewan tidak valid.");
+            return;
         }
 
+        System.out.print("Suara " + jenisHewan + " : ");
         hewan.bersuara();
 
-        if (hewan instanceof Hewan) {
-            System.out.println("Hewan ini adalah mamalia.");
+        if (hewan.isMamalia()) {
+            System.out.println(jenisHewan + " adalah mamalia.");
         } else {
-            System.out.println("Hewan ini bukan mamalia.");
+            System.out.println(jenisHewan + " bukan mamalia.");
         }
     }
-    
 }
