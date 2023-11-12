@@ -31,11 +31,19 @@ public class HewanDemo {
 
         System.out.print("Suara " + jenisHewan + " : ");
         hewan.bersuara();
+        System.out.print("\nApakah " + jenisHewan + " adalah mamalia? (Ya/Tidak): ");
+        String jawaban = input.nextLine();
 
-        if (hewan.isMamalia()) {
-            System.out.println(jenisHewan + " adalah mamalia.");
-        } else {
+        if ("Ya".equalsIgnoreCase(jawaban)) {
+            if (hewan.isMamalia()) {
+                System.out.println(jenisHewan + " adalah hewan mamalia.");
+            } else {
+                System.out.println(jenisHewan + " bukan hewan mamalia.");
+            }
+        } else if ("Tidak".equalsIgnoreCase(jawaban)) {
             System.out.println(jenisHewan + " bukan mamalia.");
+        } else {
+            System.out.println("Pilihan tidak valid.");
         }
     }
 }
